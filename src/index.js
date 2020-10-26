@@ -4,7 +4,7 @@ const app = express();
 
 
 //settings
-app.set('port',process.env.PORT);
+app.set('port',process.env.PORT || 3000);
 //Middlewares
 
 //routes
@@ -12,3 +12,6 @@ app.set('port',process.env.PORT);
 //STatic Files
 
 //Starting the server 
+app.listen(app.get('port'),() =>{
+console.log(`server on port ${app.get('port')}`);
+});
