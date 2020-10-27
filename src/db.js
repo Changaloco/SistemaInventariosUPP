@@ -1,4 +1,5 @@
-const Sequelize = require(sequelize);
+const Sequelize = require('sequelize');
+const TestModel = require('./models/test')
 
 const sequelize = new Sequelize('brwgehunx80yggpclhz1','ubs2s7bwmryxlebw','aQ4iLFG7FfwzgCoqk2ME',{
     host : 'brwgehunx80yggpclhz1-mysql.services.clever-cloud.com',
@@ -6,3 +7,14 @@ const sequelize = new Sequelize('brwgehunx80yggpclhz1','ubs2s7bwmryxlebw','aQ4iL
 }
 );
 
+const Test = TestModel(sequelize,Sequelize);
+
+sequelize.sync({force: false})
+        .then(() => {
+            console.log( 'tablas sincronizadas')
+        })
+
+
+module.exports = {
+    Test
+}
