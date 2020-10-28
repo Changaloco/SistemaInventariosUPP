@@ -9,6 +9,7 @@ const sequelize = new Sequelize('brwgehunx80yggpclhz1','ubs2s7bwmryxlebw','aQ4iL
 
 const Test = TestModel(sequelize,Sequelize);
 
+
 sequelize.sync({force: false})
         .then(() => {
             console.log( 'tablas sincronizadas')
@@ -18,3 +19,4 @@ sequelize.sync({force: false})
 module.exports = {
     Test
 }
+

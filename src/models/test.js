@@ -1,14 +1,13 @@
 const { Sequelize } = require("sequelize/types");
-
-module.exports = (sequelize,type)=>{
+module.exports = (sequelize, type)=>{
     return sequelize.define('test',{
         id : {
-            type: type.integer,
+            type: type.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        user : type.string,
-        password : type.string,
-        email: type.string
+        user : type.STRING,
+        password : type.STRING,
+        email: type.STRING
     })   
 }
